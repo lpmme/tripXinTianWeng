@@ -1,11 +1,11 @@
-# xintrip
-仿翁天信网站旅行足迹
-先上截图：
-![image](https://raw.githubusercontent.com/Resmic/xintrip/master/screenshot/xintrip.png)
+<!DOCTYPE html>
+<!-- saved from url=(0047)http://www.haloxin.me/one/index.php?c=footprint -->
+<html>
 
-index.html
-/*引入src文件夹下资源文件*/
-<link rel="stylesheet" media="all" href="./src/jquery-jvectormap.css">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Resmic - 我的足迹</title>
+		<link rel="stylesheet" media="all" href="./src/jquery-jvectormap.css">
 		<script src="./src/jquery-1.8.2.js"></script>
 		<style type="text/css" adt="123"></style>
 		<script src="./src/jquery-jvectormap.js"></script>
@@ -48,15 +48,9 @@ index.html
 		<script src="./src/proj.js"></script>
 		<script src="./src/map.js"></script>
 
-
-		<script src="./src/jquery-jvectormap-cn-mill-en.js"></script>  //中国地图数据
-		
-		
-		/*
-		创建地图，添加图标及图标样式
-		*/
-		
-		$(function() {
+		<script src="./src/jquery-jvectormap-cn-mill-en.js"></script>
+		<script>
+			$(function() {
 				var markers = [{
 						latLng: [30.490, 106.040],
 						name: '四川 · 南充 - 人生的起点 - 5/1995'
@@ -147,6 +141,13 @@ index.html
 						},
 					}
 				});
-				
-				
-				详细请参考源码！
+			})
+		</script>
+
+		<body style="background-color: #A8B2CB;">
+			<!--<div style="margin-top: 30px;font-style:bold;margin-bottom:30px;width: 100%;text-align: center;font-size: 28px;color: #FFFFFF;">我的足迹 - MyFootPrint | Resmic</div>-->
+			<div id="map1" style="margin: auto; height: 500px;">
+			</div>
+		</body>
+
+</html>
