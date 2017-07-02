@@ -1,153 +1,161 @@
 <!DOCTYPE html>
 <!-- saved from url=(0047)http://www.haloxin.me/one/index.php?c=footprint -->
 <html>
+ <head>
+    <meta http-equiv="Content-Type" content="text/html"; charset="utf-8">
+	<title>MuBaiOS - 我的足迹</title>
+	<link rel="stylesheet" media="all" href="./src/jquery-jvectormap.css">
+	<script src="./src/jquery-1.8.2.js"></script>
+	<style type="text/css" adt="123"></style>
+	<script src="./src/jquery-jvectormap.js"></script>
+	<script src="./src/jquery-mousewheel.js"></script>
 
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>Resmic - 我的足迹</title>
-		<link rel="stylesheet" media="all" href="./src/jquery-jvectormap.css">
-		<script src="./src/jquery-1.8.2.js"></script>
-		<style type="text/css" adt="123"></style>
-		<script src="./src/jquery-jvectormap.js"></script>
-		<script src="./src/jquery-mousewheel.js"></script>
+	<script src="./src/jvectormap.js"></script>
 
-		<script src="./src/jvectormap.js"></script>
+	<script src="./src/abstract-element.js"></script>
+	<script src="./src/abstract-canvas-element.js"></script>
+	<script src="./src/abstract-shape-element.js"></script>
 
-		<script src="./src/abstract-element.js"></script>
-		<script src="./src/abstract-canvas-element.js"></script>
-		<script src="./src/abstract-shape-element.js"></script>
+	<script src="./src/svg-element.js"></script>
+	<script src="./src/svg-group-element.js"></script>
+	<script src="./src/svg-canvas-element.js"></script>
+	<script src="./src/svg-shape-element.js"></script>
+	<script src="./src/svg-path-element.js"></script>
+	<script src="./src/svg-circle-element.js"></script>
+	<script src="./src/svg-image-element.js"></script>
+	<script src="./src/svg-text-element.js"></script>
 
-		<script src="./src/svg-element.js"></script>
-		<script src="./src/svg-group-element.js"></script>
-		<script src="./src/svg-canvas-element.js"></script>
-		<script src="./src/svg-shape-element.js"></script>
-		<script src="./src/svg-path-element.js"></script>
-		<script src="./src/svg-circle-element.js"></script>
-		<script src="./src/svg-image-element.js"></script>
-		<script src="./src/svg-text-element.js"></script>
+	<script src="./src/vml-element.js"></script>
+	<script src="./src/vml-group-element.js"></script>
+	<script src="./src/vml-canvas-element.js"></script>
+	<script src="./src/vml-shape-element.js"></script>
+	<script src="./src/vml-path-element.js"></script>
+	<script src="./src/vml-circle-element.js"></script>
+	<script src="./src/vml-image-element.js"></script>
 
-		<script src="./src/vml-element.js"></script>
-		<script src="./src/vml-group-element.js"></script>
-		<script src="./src/vml-canvas-element.js"></script>
-		<script src="./src/vml-shape-element.js"></script>
-		<script src="./src/vml-path-element.js"></script>
-		<script src="./src/vml-circle-element.js"></script>
-		<script src="./src/vml-image-element.js"></script>
+	<script src="./src/map-object.js"></script>
+	<script src="./src/region.js"></script>
+	<script src="./src/marker.js"></script>
 
-		<script src="./src/map-object.js"></script>
-		<script src="./src/region.js"></script>
-		<script src="./src/marker.js"></script>
+	<script src="./src/vector-canvas.js"></script>
+	<script src="./src/simple-scale.js"></script>
+	<script src="./src/ordinal-scale.js"></script>
+	<script src="./src/numeric-scale.js"></script>
+	<script src="./src/color-scale.js"></script>
+	<script src="./src/legend.js"></script>
+	<script src="./src/data-series.js"></script>
+	<script src="./src/proj.js"></script>
+	<script src="./src/map.js"></script>
 
-		<script src="./src/vector-canvas.js"></script>
-		<script src="./src/simple-scale.js"></script>
-		<script src="./src/ordinal-scale.js"></script>
-		<script src="./src/numeric-scale.js"></script>
-		<script src="./src/color-scale.js"></script>
-		<script src="./src/legend.js"></script>
-		<script src="./src/data-series.js"></script>
-		<script src="./src/proj.js"></script>
-		<script src="./src/map.js"></script>
+	<script src="./src/jquery-jvectormap-cn-mill-en.js"></script> <!--中国地图数据-->
 
-		<script src="./src/jquery-jvectormap-cn-mill-en.js"></script>
-		<script>
-			$(function() {
-				var markers = [{
-						latLng: [30.490, 106.040],
-						name: '四川 · 南充 - 人生的起点 - 5/1995'
-					}, {
-						latLng: [22.170, 113.340],
-						name: '广东 · 珠海 - 第一个到达的城市 - 12/2005'
-					}, {
-						latLng: [34.170, 108.570],
-						name: '陕西 · 西安 - 第一次长途旅行 - 7/2008'
-					}, {
-						latLng: [34.300, 109.300],
-						name: '陕西 · 渭南 - 去过不一定熟悉 - 8/2011'
-					}, {
-						latLng: [33.040, 107.010],
-						name: '陕西 · 汉中 - 很熟悉的一个陌生的地方 - 6/2011'
-					}, {
-						latLng: [34.220, 107.090],
-						name: '陕西 · 宝鸡 - 感触比较深的地方 - 8/2012'
-					}, {
-						latLng: [29.350, 106.330],
-						name: '中国 · 重庆 - 去过次数最多的地方 - 8/2013'
-					}, {
-						latLng: [22.480, 108.190],
-						name: '广西 · 南宁 - 人生的第二个省会城市 - 8/2013'
-					}, {
-						latLng: [21.280, 109.070],
-						name: '广西 · 北海 - 大学母校的所在地 - 8/2013'
-					}, {
-						latLng: [30.400, 104.040],
-						name: '四川 · 成都 - 算是缘分吧 - 2/2014'
-					}, {
-						latLng: [22.380, 110.090],
-						name: '广西 · 玉林 - 第一次公费“出游” - 4/2014'
-					}, {
-						latLng: [39.550, 116.240],
-						name: '中国 · 北京 - 算“北漂”？ - 6/2014'
-					}, {
-						latLng: [34.200, 108.430],
-						name: '陕西 · 咸阳 - 单纯的路过 - 8/2014'
-					}, {
-						latLng: [23.190, 109.240],
-						name: '广西 · 柳州 - 还是公费“出游” - 4/2015'
-					}, {
-						latLng: [23.080, 113.140],
-						name: '广东 · 广州 - 逐梦的地方 - 7/2015'
-					}, {
-						latLng: [31.360, 105.580],
-						name: '四川 · 阆中 - 作为南部的后花园 - 2/2016'
-					}, {
-						latLng: [22.330, 114.070],
-						name: '广东 · 深圳 - 人生第一次自费旅行 - 5/2016'
-					}, ],
-					values1 = [408, 512, 550, 781],
-					values2 = [1, 2, 3, 4],
-					values3 = {
+	<!--创建地图，添加图标及图标样式-->
+	<script>
+			$(function(){
+				var markers=[
+				{latLng: [37.740, 115.670],
+				name: '河北 · 衡水市 - 1993'},
+				{latLng: [37.985, 115.565],
+				name: '河北 · 深州市 - 1993'},
+				{latLng: [39.904, 116.407],
+				name: '中国 · 北京市 - 2009'},
+				{latLng: [34.280, 113.015],
+				name: '河南 · 中岳嵩山 - 2017/04'},
+				{latLng: [38.522, 115.270],
+				name: '河北 · 保定市 - 2017/06'},
+				{latLng: [39.630, 118.180],
+				name: '河北 · 唐山市 - 2016'},
+				{latLng: [46.082, 122.038],
+				name: '内蒙古 · 兴安盟乌兰浩特市 - 2017/04'},
+				{latLng: [24.880,102.833],
+				name: '云南 · 昆明市 - 2016/11'},
+				{latLng: [25.045,101.527],
+				name: '云南 · 楚雄市 - 2016/11'},
+				{latLng: [43.166,124.350],
+				name: '吉林 · 四平市 - 2016/11'},
+				{latLng: [28.656,121.420],
+				name: '浙江 · 台州市 - 2016/07'},
+				{latLng: [40.711,120.837],
+				name: '辽宁 · 葫芦岛市 - 2016/07'},
+				{latLng: [41.677,123.463],
+				name: '辽宁 · 沈阳市 - 2016/04'},
+				{latLng: [43.652,122.244],
+				name: '内蒙古· 通辽市 - 2016/04'},
+				{latLng: [34.810,117.320],
+				name: '山东 · 枣庄市 - 2016/04'},
+				{latLng: [35.104,118.356],
+				name: '山东 · 临沂市 - 2016/04'},
+				{latLng: [34.554,117.737],
+				name: '山东 · 台儿庄古城 - 2016/04'},
+				{latLng: [37.4355000000,116.3592700000],
+				name: '山东 · 德州市 - 2016'},
+				{latLng: [37.3821100000,117.9727900000],
+				name: '山东 · 滨州市 - 2016/06'},
+				{latLng: [37.0705500000,114.5044300000],
+				name: '河北 · 邢台市 - 2016'},
+				{latLng: [37.0288694470,115.6832885742],
+				name: '河北 · 清河县 - 2017/04'},
+				{latLng: [39.0851000000,117.1993700000],
+				name: '中国 · 天津市 - 2016'},
+				{latLng: [34.6181200000,112.4536100000],
+				name: '河南 · 洛阳市 - 2012/04'},
+				{latLng: [36.0662300000,120.3829900000],
+				name: '山东 · 青岛市 - 2015'},
+				{latLng: [32.6012047575,114.3889617920],
+				name: '河南 · 正阳县 - 2017/05'},
+				{latLng: [42.2586000000,118.8889400000],
+				name: '内蒙古 · 赤峰市 - 2017/05'},
+				{latLng: [37.3286726451,115.9661865234],
+				name: '河北 · 故城县 - 2017/05'},
+
+
+
+
+
+				],
+				varlues1=[408, 512, 550, 781],
+				values2 =[1, 2, 3, 4],
+				values3 ={
 						'4': 'bank',
 					};
-				$('#map1').vectorMap({
-					map: 'cn_mill_en',
-					panOnDrag: false,
-					backgroundColor: '#A8B2CB',
-					markers: markers,
-					markerStyle: {
-						initial: {
-							fill: '#FF444E',
-							stroke: '#FF444E',
-							"fill-opacity": 1,
-							"stroke-width": 1,
-							"stroke-opacity": 1,
-							r: 4
-						},
-						hover: {
-							stroke: 'black',
-							"stroke-width": 2,
-							cursor: 'pointer'
-						},
-						selected: {
-							fill: 'blue'
-						},
-						selectedHover: {}
+			$('#map1').vectorMap({
+				map: 'cn_mill_en',
+				panOnDrag: false,
+				backgroundColor: '#A8B2CB',
+				markers: markers,
+				markerStyle: {
+					initial: {
+						fill: '#ff8282',
+						stroke: '#ff8282',
+						"fill-opacity": 1,
+						"stroke-width": 1,
+						"stroke-opacity": 1,
+						r: 4
 					},
-					labels: {
-						render: function(code) {
-							var doNotShow = ['US-RI', 'US-DC'];
-							if (doNotShow.indexOf(code) === -1) {
-								return code.split('-')[1];
+					hover: {
+						stroke: 'black',
+						"stroke-width": 2,
+						cursor: 'pointer'
+					},
+					selected: {
+						fill: 'blue'
+					},
+					selectedHover: {}
+				},
+				labels: {
+					render: function(code) {
+						var doNotShow = ['US-RI', 'US-DC'];
+						if (doNotShow.indexOf(code) === -1) {
+							return code.split('-')[1];
 							}
 						},
 					}
 				});
 			})
-		</script>
+	</script>
 
-		<body style="background-color: #A8B2CB;">
-			<!--<div style="margin-top: 30px;font-style:bold;margin-bottom:30px;width: 100%;text-align: center;font-size: 28px;color: #FFFFFF;">我的足迹 - MyFootPrint | Resmic</div>-->
-			<div id="map1" style="margin: auto; height: 500px;">
-			</div>
-		</body>
-
+	<body style="background-color: #A8B2CB;">
+	<!--<div style="margin-top: 30px;font-style:bold;margin-bottom:30px;width: 100%;text-align: center;font-size: 28px;color: #FFFFFF;">我的足迹 - MyFootPrint | Resmic</div>-->
+		<div id="map1" style="margin: auto; height: 500px;"></div>
+	</body>
 </html>
